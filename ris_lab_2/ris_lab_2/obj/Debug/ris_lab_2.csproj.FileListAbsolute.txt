@@ -1,0 +1,5 @@
+D:\proj\ris\ris_lab_2\ris_lab_2\bin\Debug\ris_lab_2.exe
+D:\proj\ris\ris_lab_2\ris_lab_2\bin\Debug\ris_lab_2.pdb
+D:\proj\ris\ris_lab_2\ris_lab_2\obj\Debug\ris_lab_2.csprojResolveAssemblyReference.cache
+D:\proj\ris\ris_lab_2\ris_lab_2\obj\Debug\ris_lab_2.exe
+D:\proj\ris\ris_lab_2\ris_lab_2\obj\Debug\ris_lab_2.pdb
