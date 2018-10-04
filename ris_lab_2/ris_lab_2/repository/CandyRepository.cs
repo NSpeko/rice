@@ -1,35 +1,44 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using ris_lab_2.data;
+using Newtonsoft.Json.Linq;
 using ris_lab_2.model.candy;
 
 namespace ris_lab_2.repository
 {
     public class CandyRepository
     {
-        private List<CandySupply> candies = new List<CandySupply>();
-        private FileWorker _fileWorker = FileWorker.GetInstance();
-
         public CandyRepository()
         {
-            using (StreamWriter file = File.CreateText(@"D:\path.txt"))
+        }
+
+        public void addCandy(List<CandySupply> candies)
+        {
+            using (StreamWriter file = File.CreateText(@"D:\proj\rice\ris_lab_2\ris_lab_2\dist\candy-supply.txt"))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 //serialize object directly into file stream
-                serializer.Serialize(file, _data);
+                serializer.Serialize(textWriter: file, value: candies);
             }
-          
-        }
-
-        public void addCandy(CandySupply candy)
-        {
-            candies.Add(candy);
         }
 
         public List<CandySupply> getAll()
         {
-            return candies;
+            List<CandySupply> tempCandies = new List<CandySupply>();
+            // read JSON directly from a file
+            using (StreamReader file = File.OpenText(@"D:\proj\rice\ris_lab_2\ris_lab_2\dist\candy-supply.txt"))
+            using (JsonTextReader reader = new JsonTextReader(file))
+            {
+                JArray o2 = (JArray) JToken.ReadFrom(reader);
+                foreach (var jToken in o2)
+                {
+                    tempCandies.Add(new CandySupply(jToken["supplyWhat"].ToString()
+                        , (long) jToken["supplyAmount"]
+                        , (long) jToken["supplyPrice"]));
+                }
+            }
+
+            return tempCandies;
         }
     }
 }

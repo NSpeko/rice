@@ -5,11 +5,8 @@
     <e p="D:\proj\rice\ris_lab_2" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="ris_lab_2" t="IncludeRecursive">
-        <e p=".gitignore" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="data" t="Include">
-          <e p="FileWorker.cs" t="Include" />
-        </e>
+        <e p="dist" t="Include" />
         <e p="model.candy" t="Include">
           <e p="CandySupply.cs" t="Include" />
         </e>
@@ -19,7 +16,6 @@
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
-        <e p="README.md" t="Include" />
         <e p="repository" t="Include">
           <e p="CandyRepository.cs" t="Include" />
         </e>

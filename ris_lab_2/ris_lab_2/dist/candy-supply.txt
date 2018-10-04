@@ -1,0 +1,1 @@
+[{"supplyWhat":"korovka","supplyAmount":12,"supplyPrice":24},{"supplyWhat":"solnishko","supplyAmount":22,"supplyPrice":1200},{"supplyWhat":"roshen","supplyAmount":12,"supplyPrice":12}]
